@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        :root {
+            --bg-color: #ffe4e1;
+            --heart-color: red;
+            --paper-color: #fff;
+            --text-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-color);
+            font-family: Arial, sans-serif;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: var(--heart-color);
+            position: relative;
+            transform: rotate(45deg);
+            cursor: pointer;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: var(--heart-color);
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            left: -50px;
+            top: 0;
+        }
+        .envelope {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 400px;
+            background-color: var(--paper-color);
+            box-shadow: 0 8px 20px var(--shadow-color);
+            overflow: hidden;
+            transform: translate(-50%, -50%) translateY(-50%);
+            transition: transform 0.5s ease-out;
+        }
+        .envelope.open {
+            display: block;
+            transform: translate(-50%, -50%) translateY(0);
+        }
+        .letter {
+            padding: 20px;
+            font-size: 12px;
+            color: var(--text-color);
+            white-space: pre-line;
+            overflow-y: auto;
+            max-height: 300px;
+            visibility: hidden;
+        }
+        .open .letter {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="envelope">
+        <div class="letter"></div>
+    </div>
+    <script>
+        const heart = document.querySelector('.heart');
+        const envelope = document.querySelector('.envelope');
+        const letter = document.querySelector('.letter');
+
+        const message = `สุขสันต์วันเกิดวันเกิด ย้อนหลังอีกครั้งนะคะ
+พี่แฮปเธออีกรอบ  พี่ไม่รู้ว่าที่พี่ทำให้ เธอชอบรึป่าว แต่พี่ตั้งใจทำมาก ถึงมันไม่ค่อยมีอะไรมาก มันดูธรรมดาก็ตาม   มาจะอวยพรให้เธออีกรอบละ รอบนี้มาแบบจุกๆ 555 มาๆ  
+พี่ขอให้ข้าวมีความสุขมากๆในแต่ละวัน ขอให้ข้าว ไม่เจ็บ ไม่ไข้ ไม่ป่วย มีสุขภาพที่แข็งแรงมากๆ ขอให้ข้าวหายเหนื่อยกับเรื่องที่ข้าวรู้สึกไม่ดี หนักใจข้าวนะต้องภูมิใจกับตัวข้าวเองเยอะๆนะ เพราะที่ผ่านมาพี่ภูมิใจในตัวข้าวตลอดเลย 
+เวลาคิดอะไรหรือปราถนาพี่ก็ขอให้ข้าวได้สิ่งนั้นตามที่หวังไว้ ขอให้ข้าวเติบโตตามที่ข้าวหวัง มีแต่รอยยิ้ม ความสุข  ไม่ว่าเจออะไรมาขอให้เสียน้ำตาน้อยที่สุด  ไม่ว่าข้าวจะอยู่ไหนขอให้ข้าวมั่นใจในตัวเองเยอะๆนะคะ ไม่ว่าข้าวทำไร ข้าวเก่งอยู่แล้วนะ ขอให้ข้าว ยิ้มและหัวเราะเยอะๆถึงพี่ไม่เคยเห็น แต่อย่างน้อยคนรอบข้างได้เห็น  ก็ขอให้มีคนเอ็นดูข้าวเยอะๆนะคะ ไม่ว่าจะอยู่ที่ไหนขอให้พบเจอแต่คนที่รักและถนอมจิตใจข้าวนะ ถ้าเหนื่อยก็พักนะ อย่าหักโหมเกินไปนะคะ มีอะไรที่รู้สึกไม่สบายใจพี่อยากให้ข้าวนึกถึงพี่นะคะ ถึงแม้พี่จะน่าเบื่อมากก็ตาม  พี่จะพร้อมรับฟังทุกอย่างที่ข้าวเจอ พี่จะรับฟังโดยไม่ตั้งคำถามอะไรกับข้าวเลย พี่จะคอยชัพพอร์ตในทุกๆเรื่องที่ข้าวชอบ หรือมีความสุขที่ได้ทำมันนะคะ พี่จะอยู่ข้างๆข้าวเสมอนะคะ พี่อยู่ตรงนี้แหละไม่ไปไหนหรอก5555 หันมาข้าวจะเจอพี่ตลอดแหละ  และขอให้ข้าวรู้ว่ามีคนคอยห่วงใยและคอยเป็นกำลังใจให้เสมอนะคะ ไม่ว่าข้าวจะอยู่ที่ไหน หรือกำลังทำอะไร`;
+
+        let index = 0;
+
+        function typeMessage() {
+            if (index < message.length) {
+                letter.textContent += message[index];
+                index++;
+                setTimeout(typeMessage, 50);
+            }
+        }
+
+        heart.addEventListener('click', () => {
+            envelope.classList.toggle('open');
+            if (!letter.textContent) {
+                typeMessage();
+            }
+        });
+    </script>
+</body>
+</html>
